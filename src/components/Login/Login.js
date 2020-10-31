@@ -17,12 +17,9 @@ function Login() {
   }
 
   const register = e => {
-    console.log(email)
     e.preventDefault()
-    console.log('Register')
     firebaseAuth.createUserWithEmailAndPassword(email, password)
       .then(auth => {
-        console.log(auth)
         if (auth) {
           history.push('/')
         }

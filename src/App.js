@@ -13,20 +13,16 @@ import { useBasketValue } from './context/BasketContext'
 import ScrollToTop from './ScrollToTop'
 
 function App() {
-  console.log('env', process.env)
   const [state, dispatch] = useBasketValue()
 
   useEffect(() => {
     firebaseAuth.onAuthStateChanged(authUser => {
-      console.log('THE USER IS >>>', authUser)
       if (authUser) {
-        console.log('logged in')
         dispatch({
           type: 'SET_USER',
           user: authUser,
         })
       } else {
-        console.log('logged out')
         dispatch({
           type: 'SET_USER',
           user: null,

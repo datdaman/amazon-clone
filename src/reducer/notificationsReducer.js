@@ -3,8 +3,6 @@ export const initialNotificationsState = {
 }
 
 const notificationsReducer = (state, action) => {
-  console.log(state, action)
-  console.log(action.id)
   switch (action.type) {
     case 'ADD_TO_NOTIFICATIONS':
       return {

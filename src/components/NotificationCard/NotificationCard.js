@@ -9,7 +9,6 @@ function NotificationCard() {
   const [{ notifications }, dispatchNotification] = useNotificationsValue()
 
   useEffect(() => () => {
-    console.log('cleanup')
     dispatchNotification({
       type: 'CLEAR_NOTIFICATIONS',
     })
@@ -27,7 +26,6 @@ function NotificationCard() {
 
     return () => {
       clearTimeout(myTimeout)
-      console.log('cleanup')
     }
   }, [notifications])
 
