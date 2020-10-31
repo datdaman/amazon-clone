@@ -13,6 +13,7 @@ import { useBasketValue } from './context/BasketContext'
 import ScrollToTop from './ScrollToTop'
 
 function App() {
+  console.log('env', process.env)
   const [state, dispatch] = useBasketValue()
 
   useEffect(() => {
