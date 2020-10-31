@@ -15,7 +15,7 @@ const basketReducer = (state, action) => {
     case 'REMOVE_FROM_BASKET':
       return {
         ...state,
-        basket: state.basket.filter((_, i) => i !== action.position),
+        basket: state.basket.filter(item => item.id !== action.id),
       }
     case 'SET_USER':
       return {

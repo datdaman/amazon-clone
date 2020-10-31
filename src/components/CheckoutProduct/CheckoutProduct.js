@@ -5,7 +5,7 @@ import './CheckoutProduct.css'
 import { useBasketValue } from '../../context/BasketContext'
 
 function CheckoutProduct({
-  position, id, title, image, price, rating,
+  ref, position, id, title, image, price, rating,
 }) {
   const [{ basket }, dispatch] = useBasketValue()
   const removeFromBasket = () => {
