@@ -5,7 +5,7 @@ import './CheckoutProduct.css'
 import { useBasketValue } from '../../context/BasketContext'
 
 function CheckoutProduct({
-  ref, position, id, title, image, price, rating,
+  position, id, title, image, price, rating, hideButton,
 }) {
   const [{ basket }, dispatch] = useBasketValue()
   const removeFromBasket = () => {
@@ -32,7 +32,7 @@ function CheckoutProduct({
             />
           ))}
         </div>
-        <button type="button" onClick={removeFromBasket}>Remove from basket</button>
+        {!hideButton && <button type="button" onClick={removeFromBasket}>Remove from basket</button>}
       </div>
     </div>
   )
